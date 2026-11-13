@@ -2782,3 +2782,73 @@ body {
         padding: 22px;
     }
 }
+
+
+/* =========================
+   FOTO DAFTAR MENU KSS
+========================== */
+
+.menu-photo-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.menu-photo-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(64, 34, 15, 0.12);
+    transition: 0.3s ease;
+}
+
+.menu-photo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(64, 34, 15, 0.18);
+}
+
+.menu-photo-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 850px;
+    object-fit: contain;
+    background: var(--cream);
+}
+
+.menu-photo-caption {
+    padding: 25px;
+    text-align: center;
+}
+
+.menu-photo-caption h3 {
+    color: var(--brown);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.menu-photo-caption p {
+    color: var(--brown-light);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+@media screen and (max-width: 600px) {
+    .menu-photo-container {
+        padding: 0 15px;
+        margin: 25px auto;
+    }
+
+    .menu-photo-caption {
+        padding: 20px;
+    }
+
+    .menu-photo-caption h3 {
+        font-size: 19px;
+    }
+
+    .menu-photo-caption p {
+        font-size: 13px;
+    }
+}
