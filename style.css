@@ -2852,3 +2852,46 @@ body {
         font-size: 13px;
     }
 }
+
+
+/* =========================
+   POPUP FOTO MENU
+========================== */
+
+.menu-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.menu-lightbox.active {
+    display: flex;
+}
+
+.menu-lightbox img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.menu-lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.menu-photo-card img {
+    cursor: zoom-in;
+}
