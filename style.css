@@ -2895,3 +2895,46 @@ body {
 .menu-photo-card img {
     cursor: zoom-in;
 }
+
+
+/* =========================
+   POPUP GALERI KENANGAN KSS
+========================== */
+
+.memory-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.94);
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.memory-lightbox.active {
+    display: flex;
+}
+
+.memory-lightbox img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.memory-lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.memory-item img {
+    cursor: zoom-in;
+}

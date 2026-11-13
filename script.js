@@ -63,3 +63,44 @@ if (menuPhoto && menuLightbox && closeMenuLightbox) {
     });
 
 }
+
+
+/* =========================
+   POPUP GALERI KENANGAN KSS
+========================== */
+
+const memoryImages = document.querySelectorAll(".memory-item img");
+const memoryLightbox = document.getElementById("memoryLightbox");
+const lightboxMemoryImage = document.getElementById("lightboxMemoryImage");
+const closeMemoryLightbox = document.getElementById("closeMemoryLightbox");
+
+if (memoryImages.length > 0 && memoryLightbox && lightboxMemoryImage && closeMemoryLightbox) {
+
+    memoryImages.forEach(function (image) {
+
+        image.addEventListener("click", function () {
+
+            lightboxMemoryImage.src = image.src;
+            lightboxMemoryImage.alt = image.alt;
+
+            memoryLightbox.classList.add("active");
+
+        });
+
+    });
+
+    closeMemoryLightbox.addEventListener("click", function () {
+
+        memoryLightbox.classList.remove("active");
+
+    });
+
+    memoryLightbox.addEventListener("click", function (event) {
+
+        if (event.target === memoryLightbox) {
+            memoryLightbox.classList.remove("active");
+        }
+
+    });
+
+}
