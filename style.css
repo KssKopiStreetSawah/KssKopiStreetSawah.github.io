@@ -2938,3 +2938,108 @@ body {
 .memory-item img {
     cursor: zoom-in;
 }
+
+
+/* =========================
+   HALAMAN ULASAN KSS
+========================== */
+
+.review-introduction {
+    padding: 65px 20px 35px;
+}
+
+.review-list-section {
+    padding: 25px 20px 65px;
+}
+
+.review-placeholder {
+    width: 90%;
+    max-width: 750px;
+    margin: auto;
+    padding: 45px 30px;
+    text-align: center;
+    background: var(--cream-light);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(64, 34, 15, 0.08);
+}
+
+.review-icon {
+    font-size: 45px;
+    margin-bottom: 18px;
+}
+
+.review-placeholder h2 {
+    color: var(--brown);
+    margin-bottom: 15px;
+}
+
+.review-placeholder p {
+    color: var(--brown-light);
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.review-status {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.review-empty-note {
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.review-information {
+    padding: 30px 20px 75px;
+}
+
+.review-info-card {
+    width: 90%;
+    max-width: 750px;
+    margin: auto;
+    padding: 40px 30px;
+    text-align: center;
+    background: #e9e3ce;
+    border-radius: 20px;
+}
+
+.review-info-card h2 {
+    margin-bottom: 15px;
+    color: var(--brown);
+}
+
+.review-info-card p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--brown-light);
+}
+
+.review-button {
+    display: inline-block;
+    padding: 13px 22px;
+    margin: 5px;
+    background: var(--green);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.review-button:hover {
+    background: var(--brown);
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 600px) {
+    .review-placeholder,
+    .review-info-card {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .review-button {
+        display: block;
+        margin: 12px auto;
+    }
+}
