@@ -3051,12 +3051,15 @@ body {
     background-color: var(--cream-light);
 }
 
+
+/* VIDEO KSS - UKURAN RESPONSIF */
+
 .memory-video-container {
     width: 100%;
-    max-width: 360px;
-    margin: auto;
+    max-width: 280px;
+    margin: 30px auto;
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 16px;
     border: 2px solid var(--green-light);
     box-shadow: 0 10px 25px rgba(64, 34, 15, 0.12);
     background-color: #000;
@@ -3066,7 +3069,15 @@ body {
     display: block;
     width: 100%;
     height: auto;
+    object-fit: contain;
 }
+
+@media screen and (max-width: 400px) {
+    .memory-video-container {
+        max-width: calc(100% - 30px);
+    }
+}
+
 
 @media screen and (max-width: 600px) {
     .memory-video-section {
