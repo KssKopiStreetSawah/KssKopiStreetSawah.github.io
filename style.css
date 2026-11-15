@@ -22,11 +22,22 @@
     --white: #ffffff;
 }
 
+
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--cream);
+
+    background: linear-gradient(
+        180deg,
+        #fffdf6 0%,
+        #f5f0df 55%,
+        #eee5cc 100%
+    );
+
+    background-attachment: fixed;
+
     color: var(--brown);
 }
+
 
 
 /* =================================
