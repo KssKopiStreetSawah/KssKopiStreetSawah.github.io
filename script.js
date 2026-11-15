@@ -44,7 +44,7 @@ if (menuToggle && navMenu) {
 ========================== */
 
 const menuImages = document.querySelectorAll(
-    ".menu-photo-card img, .menu-item-card img"
+    ".menu-photo-card img, .menu-item-card img, .menu-card img"
 );
 
 const menuLightbox = document.getElementById("menuLightbox");

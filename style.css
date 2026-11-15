@@ -333,7 +333,7 @@ body {
 
 
 /* =====================================
-   12. HERO / BANNER
+   12. HERO / BANNER KSS
 ===================================== */
 
 .hero {
@@ -343,14 +343,17 @@ body {
     align-items: center;
     justify-content: center;
 
-    text-align: center;
+    position: relative;
+    overflow: hidden;
 
-    padding: 80px 20px;
+    text-align: center;
+    padding: 90px 20px;
 
     background:
         linear-gradient(
-            rgba(35, 27, 15, 0.58),
-            rgba(35, 27, 15, 0.58)
+            135deg,
+            rgba(35, 27, 15, 0.72),
+            rgba(35, 27, 15, 0.38)
         ),
         url("img/background.jpg");
 
@@ -359,27 +362,40 @@ body {
 }
 
 .hero-content {
-    max-width: 750px;
+    width: 100%;
+    max-width: 780px;
+
     color: var(--white);
+
+    animation: heroFadeIn 1.2s ease both;
 }
 
 .hero-label {
+    display: inline-block;
+
     color: #e8d6ad;
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    padding: 9px 17px;
+
+    border: 1px solid rgba(232, 214, 173, 0.5);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .hero h1 {
-    font-size: 58px;
+    font-size: clamp(38px, 6vw, 62px);
     line-height: 1.15;
 
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .hero h1 span {
@@ -388,60 +404,118 @@ body {
 }
 
 .hero-description {
-    font-size: 16px;
-    line-height: 1.8;
+    max-width: 620px;
+    margin: 0 auto 32px;
 
-    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.9;
+
+    color: #fffdf6;
 }
 
 .hero-buttons {
     display: flex;
     justify-content: center;
+    align-items: center;
+
     flex-wrap: wrap;
     gap: 15px;
 }
 
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
 
 /* =====================================
-   13. TOMBOL UMUM
+   13. TOMBOL UMUM KSS
 ===================================== */
 
 .btn-primary,
 .btn-outline {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 
-    padding: 14px 25px;
+    min-height: 48px;
+    padding: 14px 27px;
 
     border-radius: 30px;
-
     text-decoration: none;
 
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 1px;
 
-    transition: 0.3s;
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .btn-primary {
     background-color: var(--green);
-    color: white;
+    color: var(--white);
+
+    border: 1px solid var(--green);
+    box-shadow: 0 5px 14px rgba(85, 113, 61, 0.2);
 }
 
 .btn-primary:hover {
     background-color: var(--brown);
+    border-color: var(--brown);
+
     transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(64, 34, 15, 0.2);
 }
 
 .btn-outline {
-    border: 1px solid white;
-    color: white;
+    background-color: transparent;
+
+    border: 1px solid var(--white);
+    color: var(--white);
 }
 
 .btn-outline:hover {
-    background-color: white;
+    background-color: var(--white);
     color: var(--brown);
+
+    transform: translateY(-3px);
 }
+
+.btn-primary:focus-visible,
+.btn-outline:focus-visible {
+    outline: 3px solid var(--green-light);
+    outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+    .hero-buttons {
+        gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-outline {
+        min-height: 45px;
+        padding: 12px 20px;
+        font-size: 12px;
+    }
+}
+
 
 
 /* =====================================
@@ -3268,5 +3342,248 @@ body {
 
     .nav-menu a::after {
         display: none;
+    }
+}
+
+
+/* =====================================
+   DAFTAR MENU - 4 KATEGORI KSS
+===================================== */
+
+.menu-category-section {
+    padding: 65px 7%;
+    background-color: var(--cream);
+}
+
+.menu-category-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.menu-category {
+    padding: 28px;
+    background-color: var(--cream-light);
+
+    border: 1px solid rgba(64, 34, 15, 0.12);
+    border-radius: 16px;
+
+    box-shadow: 0 8px 22px rgba(64, 34, 15, 0.07);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.menu-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(64, 34, 15, 0.12);
+}
+
+/* JUDUL KATEGORI */
+
+.menu-category h2 {
+    color: var(--green);
+    font-size: 22px;
+    margin-bottom: 22px;
+    padding-bottom: 13px;
+
+    border-bottom: 2px solid var(--green-light);
+}
+
+/* DAFTAR NAMA DAN HARGA */
+
+.menu-price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.menu-price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px dashed rgba(64, 34, 15, 0.2);
+
+    color: var(--brown-light);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.menu-price-item:last-child {
+    border-bottom: none;
+}
+
+.menu-price-item span:first-child {
+    font-weight: 500;
+}
+
+.menu-price-item span:last-child {
+    color: var(--brown);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* TAMPILAN TABLET */
+
+@media screen and (max-width: 800px) {
+    .menu-category-section {
+        padding: 50px 5%;
+    }
+
+    .menu-category-container {
+        gap: 18px;
+    }
+
+    .menu-category {
+        padding: 22px;
+    }
+}
+
+/* TAMPILAN HP */
+
+@media screen and (max-width: 600px) {
+    .menu-category-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .menu-category {
+        padding: 22px;
+    }
+
+    .menu-category h2 {
+        font-size: 20px;
+    }
+
+    .menu-price-item {
+        font-size: 13px;
+        padding: 12px 0;
+    }
+}
+
+
+
+/* =====================================
+   KARTU FOTO MENU KSS
+===================================== */
+
+.menu-category-section {
+    padding: 60px 7%;
+    background-color: var(--cream);
+}
+
+.menu-category-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.menu-category {
+    padding: 25px;
+    background-color: var(--cream-light);
+    border-radius: 18px;
+    border: 1px solid rgba(64, 34, 15, 0.12);
+    box-shadow: 0 8px 22px rgba(64, 34, 15, 0.07);
+}
+
+.menu-category h2 {
+    color: var(--green);
+    font-size: 25px;
+    margin-bottom: 25px;
+    padding-bottom: 13px;
+    border-bottom: 2px solid var(--green-light);
+}
+
+.menu-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.menu-card {
+    overflow: hidden;
+    border-radius: 13px;
+    background-color: white;
+    border: 1px solid rgba(64, 34, 15, 0.1);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(64, 34, 15, 0.13);
+}
+
+.menu-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.menu-card-info {
+    padding: 14px;
+}
+
+.menu-card-info h3 {
+    color: var(--brown);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.menu-card-info p {
+    color: var(--green);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* TABLET */
+
+@media screen and (max-width: 900px) {
+    .menu-card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* HP */
+
+@media screen and (max-width: 600px) {
+    .menu-category-section {
+        padding: 40px 5%;
+    }
+
+    .menu-category {
+        padding: 18px;
+    }
+
+    .menu-category h2 {
+        font-size: 21px;
+    }
+
+    .menu-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 13px;
+    }
+
+    .menu-card-info {
+        padding: 11px;
+    }
+
+    .menu-card-info h3 {
+        font-size: 12px;
+    }
+
+    .menu-card-info p {
+        font-size: 13px;
     }
 }
