@@ -38,18 +38,34 @@ if (menuToggle && navMenu) {
 }
 
 
+
 /* =========================
-   POPUP FOTO DAFTAR MENU
+   POPUP FOTO MENU KSS
 ========================== */
 
-const menuPhoto = document.querySelector(".menu-photo-card img");
+const menuImages = document.querySelectorAll(
+    ".menu-photo-card img, .menu-item-card img"
+);
+
 const menuLightbox = document.getElementById("menuLightbox");
+const lightboxMenuImage = document.getElementById("lightboxMenuImage");
 const closeMenuLightbox = document.getElementById("closeMenuLightbox");
 
-if (menuPhoto && menuLightbox && closeMenuLightbox) {
+if (
+    menuImages.length > 0 &&
+    menuLightbox &&
+    lightboxMenuImage &&
+    closeMenuLightbox
+) {
+    menuImages.forEach(function (image) {
 
-    menuPhoto.addEventListener("click", function () {
-        menuLightbox.classList.add("active");
+        image.addEventListener("click", function () {
+            lightboxMenuImage.src = image.src;
+            lightboxMenuImage.alt = image.alt;
+
+            menuLightbox.classList.add("active");
+        });
+
     });
 
     closeMenuLightbox.addEventListener("click", function () {
@@ -61,7 +77,6 @@ if (menuPhoto && menuLightbox && closeMenuLightbox) {
             menuLightbox.classList.remove("active");
         }
     });
-
 }
 
 
@@ -74,33 +89,30 @@ const memoryLightbox = document.getElementById("memoryLightbox");
 const lightboxMemoryImage = document.getElementById("lightboxMemoryImage");
 const closeMemoryLightbox = document.getElementById("closeMemoryLightbox");
 
-if (memoryImages.length > 0 && memoryLightbox && lightboxMemoryImage && closeMemoryLightbox) {
-
+if (
+    memoryImages.length > 0 &&
+    memoryLightbox &&
+    lightboxMemoryImage &&
+    closeMemoryLightbox
+) {
     memoryImages.forEach(function (image) {
 
         image.addEventListener("click", function () {
-
             lightboxMemoryImage.src = image.src;
             lightboxMemoryImage.alt = image.alt;
 
             memoryLightbox.classList.add("active");
-
         });
 
     });
 
     closeMemoryLightbox.addEventListener("click", function () {
-
         memoryLightbox.classList.remove("active");
-
     });
 
     memoryLightbox.addEventListener("click", function (event) {
-
         if (event.target === memoryLightbox) {
             memoryLightbox.classList.remove("active");
         }
-
     });
-
 }

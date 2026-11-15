@@ -3043,3 +3043,123 @@ body {
         margin: 12px auto;
     }
 }
+
+/* VIDEO KENANGAN KSS */
+
+.memory-video-section {
+    padding: 70px 7%;
+    background-color: var(--cream-light);
+}
+
+.memory-video-container {
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 2px solid var(--green-light);
+    box-shadow: 0 10px 25px rgba(64, 34, 15, 0.12);
+    background-color: #000;
+}
+
+.memory-video-container video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .memory-video-section {
+        padding: 55px 6%;
+    }
+    
+    .memory-video-container {
+        border-radius: 12px;
+    }
+}
+
+
+/* =========================
+   KARTU 22 MENU KSS
+========================== */
+
+.menu-items-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto 20px;
+}
+
+.menu-item-card {
+    overflow: hidden;
+    background-color: var(--cream-light);
+    border: 1px solid rgba(85, 113, 61, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 5px 16px rgba(64, 34, 15, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(64, 34, 15, 0.14);
+}
+
+.menu-item-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    cursor: zoom-in;
+}
+
+.menu-item-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.menu-item-info h3 {
+    color: var(--brown);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.menu-item-info p {
+    color: var(--green);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* TABLET */
+@media screen and (max-width: 900px) {
+    .menu-items-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+}
+
+/* HP */
+@media screen and (max-width: 600px) {
+    .menu-items-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .menu-item-card {
+        border-radius: 12px;
+    }
+
+    .menu-item-info {
+        padding: 12px 8px;
+    }
+
+    .menu-item-info h3 {
+        font-size: 14px;
+    }
+
+    .menu-item-info p {
+        font-size: 13px;
+    }
+}
