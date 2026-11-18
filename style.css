@@ -661,16 +661,27 @@ body {
     gap: 20px;
 }
 
+
+
 .gallery-container img {
+    display: block;
     width: 100%;
-    height: 250px;
+    height: 260px;
 
     object-fit: cover;
+    object-position: center;
 
-    border-radius: 15px;
+    border-radius: 18px;
 
-    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(64, 34, 15, 0.12);
+
+    cursor: zoom-in;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
+
+
 
 .gallery-container img:hover {
     transform: scale(1.03);
@@ -854,9 +865,13 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .gallery-container img {
-        height: 230px;
-    }
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+}
 
     .welcome-section,
     .feature-section,
@@ -3597,4 +3612,173 @@ body {
     .menu-card-info p {
         font-size: 13px;
     }
+}
+
+
+
+/* =====================================
+   GALERI BERANDA KSS
+===================================== */
+
+.gallery-section {
+    padding: 70px 7%;
+    background-color: var(--cream-light);
+}
+
+.gallery-container {
+    max-width: 1100px;
+    margin: 35px auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.gallery-container img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 20px rgba(64, 34, 15, 0.12);
+
+    cursor: zoom-in;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.gallery-container img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(64, 34, 15, 0.18);
+}
+
+/* TOMBOL GALERI */
+
+.gallery-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* RESPONSIF TABLET */
+
+@media screen and (max-width: 850px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+}
+
+/* RESPONSIF HP */
+
+@media screen and (max-width: 600px) {
+    .gallery-section {
+        padding: 50px 6%;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gallery-container img {
+        aspect-ratio: 16 / 10;
+        border-radius: 15px;
+    }
+}
+
+/* =====================================
+   POPUP ZOOM GALERI
+===================================== */
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(20, 17, 13, 0.92);
+}
+
+.gallery-lightbox.active {
+    display: flex;
+}
+
+.gallery-lightbox img {
+    display: block;
+
+    max-width: 95%;
+    max-height: 85vh;
+
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.gallery-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+    color: var(--brown);
+
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* =====================================
+   PERBAIKAN FOTO GALERI KHUSUS HP
+===================================== */
+
+@media screen and (max-width: 600px) {
+
+    .gallery-container img {
+        width: 100%;
+        height: 230px;
+        aspect-ratio: auto;
+
+        object-fit: contain;
+        object-position: center;
+
+        border-radius: 15px;
+    }
+
+}
+
+/* PERBAIKAN GALERI BERANDA DI HP */
+
+@media screen and (max-width: 650px) {
+
+    .gallery-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .gallery-container img {
+        display: block;
+        width: 100% !important;
+        max-width: 100%;
+        height: auto !important;
+        aspect-ratio: unset;
+        object-fit: unset !important;
+        object-position: center;
+    }
+
 }

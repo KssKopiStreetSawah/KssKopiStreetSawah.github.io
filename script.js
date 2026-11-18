@@ -116,3 +116,61 @@ if (
         }
     });
 }
+
+
+/* =====================================
+   ZOOM GALERI BERANDA KSS
+===================================== */
+
+const galleryLightbox =
+    document.getElementById("galleryLightbox");
+
+const lightboxGalleryImage =
+    document.getElementById("lightboxGalleryImage");
+
+const closeGalleryLightbox =
+    document.getElementById("closeGalleryLightbox");
+
+const galleryImages =
+    document.querySelectorAll(".gallery-container img");
+
+if (
+    galleryLightbox &&
+    lightboxGalleryImage &&
+    closeGalleryLightbox
+) {
+
+    galleryImages.forEach(function (img) {
+
+        img.addEventListener("click", function () {
+
+            lightboxGalleryImage.src = img.src;
+            lightboxGalleryImage.alt = img.alt;
+
+            galleryLightbox.classList.add("active");
+
+        });
+
+    });
+
+    closeGalleryLightbox.addEventListener("click", function () {
+        galleryLightbox.classList.remove("active");
+    });
+
+    galleryLightbox.addEventListener("click", function (event) {
+
+        if (event.target === galleryLightbox) {
+            galleryLightbox.classList.remove("active");
+        }
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+            galleryLightbox.classList.remove("active");
+        }
+
+    });
+
+}
